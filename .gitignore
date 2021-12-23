@@ -395,3 +395,6 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/csharp
 
 BookShop.Lib/connect_to_db_config.json
+
+.github/
+bitbucket-pipelines.yml
