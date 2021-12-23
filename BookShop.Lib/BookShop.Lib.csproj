@@ -12,6 +12,11 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
       <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.8" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BookShop.Model\BookShop.Model.csproj" />
     </ItemGroup>
 
 </Project>
