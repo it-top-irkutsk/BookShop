@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using BookShop.Lib;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.TestApp
 {
@@ -6,7 +9,21 @@ namespace BookShop.TestApp
     {
         private static void Main()
         {
-            using var db;
+            using var db = BookShopDb.Init();
+
+            var authors = db.TabAuthors
+                .Include(a => a.TabBooks)
+                    .ThenInclude(b => b!.IdGenreNavigation)
+                .ToList();
+            
+            foreach (var author in authors)
+            {
+                Console.WriteLine($"{author.Id}: {author.LastName} {author.FirstName}");
+                foreach (var book in author.TabBooks)
+                {
+                    Console.WriteLine($"{book.Id}: {book.Title}, {book.IdGenreNavigation.Name}");
+                }
+            }
         }
     }
 }
