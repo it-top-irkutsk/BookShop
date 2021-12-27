@@ -4,16 +4,16 @@
 
 namespace BookShop.Model
 {
-    public sealed partial class TabGenre
+    public sealed partial class Genre
     {
-        public TabGenre()
+        public Genre()
         {
-            TabBooks = new HashSet<TabBook>();
+            TabBooks = new HashSet<Book>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<TabBook> TabBooks { get; set; }
+        public ICollection<Book> TabBooks { get; set; }
     }
 }

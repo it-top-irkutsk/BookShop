@@ -4,11 +4,11 @@
 
 namespace BookShop.Model
 {
-    public sealed partial class TabEdition
+    public sealed partial class Edition
     {
-        public TabEdition()
+        public Edition()
         {
-            TabPrices = new HashSet<TabPrice>();
+            TabPrices = new HashSet<Price>();
         }
 
         public int Id { get; set; }
@@ -17,8 +17,8 @@ namespace BookShop.Model
         public int NumberOfPages { get; set; }
         public short YearOfPublishing { get; set; }
 
-        public TabBook IdBookNavigation { get; set; }
-        public TabPublishingHouse IdPublishingHouseNavigation { get; set; }
-        public ICollection<TabPrice> TabPrices { get; set; }
+        public Book IdBookNavigation { get; set; }
+        public PublishingHouse IdPublishingHouseNavigation { get; set; }
+        public ICollection<Price> TabPrices { get; set; }
     }
 }

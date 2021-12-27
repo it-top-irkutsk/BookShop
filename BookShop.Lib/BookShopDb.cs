@@ -14,16 +14,16 @@ namespace BookShop.Lib
         public BookShopDb(DbContextOptions<BookShopDb> options)
             : base(options) { }
 
-        public virtual DbSet<TabAuthor> TabAuthors { get; set; }
-        public virtual DbSet<TabBook> TabBooks { get; set; }
-        public virtual DbSet<TabEdition> TabEditions { get; set; }
-        public virtual DbSet<TabGenre> TabGenres { get; set; }
-        public virtual DbSet<TabPrice> TabPrices { get; set; }
-        public virtual DbSet<TabPublishingHouse> TabPublishingHouses { get; set; }
+        public virtual DbSet<Author> TabAuthors { get; set; }
+        public virtual DbSet<Book> TabBooks { get; set; }
+        public virtual DbSet<Edition> TabEditions { get; set; }
+        public virtual DbSet<Genre> TabGenres { get; set; }
+        public virtual DbSet<Price> TabPrices { get; set; }
+        public virtual DbSet<PublishingHouse> TabPublishingHouses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<TabAuthor>(entity =>
+            modelBuilder.Entity<Author>(entity =>
             {
                 entity.ToTable("tab_authors");
 
@@ -42,7 +42,7 @@ namespace BookShop.Lib
                     .HasColumnName("last_name");
             });
 
-            modelBuilder.Entity<TabBook>(entity =>
+            modelBuilder.Entity<Book>(entity =>
             {
                 entity.ToTable("tab_books");
 
@@ -84,7 +84,7 @@ namespace BookShop.Lib
                     .HasConstraintName("tab_books_ibfk_2");
             });
 
-            modelBuilder.Entity<TabEdition>(entity =>
+            modelBuilder.Entity<Edition>(entity =>
             {
                 entity.ToTable("tab_editions");
 
@@ -125,7 +125,7 @@ namespace BookShop.Lib
                     .HasConstraintName("tab_editions_ibfk_2");
             });
 
-            modelBuilder.Entity<TabGenre>(entity =>
+            modelBuilder.Entity<Genre>(entity =>
             {
                 entity.ToTable("tab_genres");
 
@@ -139,7 +139,7 @@ namespace BookShop.Lib
                     .HasColumnName("name");
             });
 
-            modelBuilder.Entity<TabPrice>(entity =>
+            modelBuilder.Entity<Price>(entity =>
             {
                 entity.ToTable("tab_prices");
 
@@ -149,13 +149,13 @@ namespace BookShop.Lib
                     .HasColumnType("int(11)")
                     .HasColumnName("id");
 
-                entity.Property(e => e.Cost).HasColumnName("cost");
+                entity.Property(e => e.CostOfEdition).HasColumnName("cost");
 
                 entity.Property(e => e.IdEdition)
                     .HasColumnType("int(11)")
                     .HasColumnName("id_edition");
 
-                entity.Property(e => e.Price).HasColumnName("price");
+                entity.Property(e => e.PriceOfEdition).HasColumnName("price");
 
                 entity.HasOne(d => d.IdEditionNavigation)
                     .WithMany(p => p.TabPrices)
@@ -164,7 +164,7 @@ namespace BookShop.Lib
                     .HasConstraintName("tab_prices_ibfk_1");
             });
 
-            modelBuilder.Entity<TabPublishingHouse>(entity =>
+            modelBuilder.Entity<PublishingHouse>(entity =>
             {
                 entity.ToTable("tab_publishing_houses");
 

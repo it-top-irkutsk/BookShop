@@ -4,17 +4,17 @@
 
 namespace BookShop.Model
 {
-    public sealed partial class TabAuthor
+    public sealed partial class Author
     {
-        public TabAuthor()
+        public Author()
         {
-            TabBooks = new HashSet<TabBook>();
+            TabBooks = new HashSet<Book>();
         }
 
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public ICollection<TabBook> TabBooks { get; set; }
+        public ICollection<Book> TabBooks { get; set; }
     }
 }
