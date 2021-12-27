@@ -193,6 +193,7 @@ namespace BookShop.Lib
                 .GetConnectionString("DefaultConnection");
             
             var options = new DbContextOptionsBuilder<BookShopDb>()
+                //.UseLazyLoadingProxies()
                 .UseMySQL(connectionString)
                 .Options;
             

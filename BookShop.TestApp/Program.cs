@@ -15,6 +15,8 @@ namespace BookShop.TestApp
                 .Include(a => a.TabBooks)
                     .ThenInclude(b => b!.IdGenreNavigation)
                 .ToList();
+
+            // var authors = db.TabAuthors.ToList();
             
             foreach (var author in authors)
             {

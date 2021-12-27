@@ -4,7 +4,7 @@
 
 namespace BookShop.Model
 {
-    public sealed partial class Edition
+    public partial class Edition
     {
         public Edition()
         {

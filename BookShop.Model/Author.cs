@@ -4,7 +4,7 @@
 
 namespace BookShop.Model
 {
-    public sealed partial class Author
+    public partial class Author
     {
         public Author()
         {

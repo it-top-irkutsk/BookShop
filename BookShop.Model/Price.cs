@@ -9,6 +9,6 @@ namespace BookShop.Model
         public double CostOfEdition { get; set; }
         public double PriceOfEdition { get; set; }
 
-        public virtual Edition IdEditionNavigation { get; set; }
+        public Edition IdEditionNavigation { get; set; }
     }
 }
