@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 #nullable disable
 
 namespace BookShop.Model
 {
-    public sealed partial class Genre
+    public sealed partial class Genre : IEquatable<Genre>
     {
         public Genre()
         {
@@ -15,5 +16,22 @@ namespace BookShop.Model
         public string Name { get; set; }
 
         public ICollection<Book> TabBooks { get; set; }
+
+        public bool Equals(Genre other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return Id == other.Id && Name == other.Name;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return ReferenceEquals(this, obj) || obj is Genre other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Name);
+        }
     }
 }
