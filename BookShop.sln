@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.Lib", "BookShop.Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.Model", "BookShop.Model\BookShop.Model.csproj", "{B1690129-5C85-4247-957A-0B7A6BF7F8D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop.Test", "BookShop.Test\BookShop.Test.csproj", "{88AF991B-BA55-4EA7-B39E-E626537CAAFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B1690129-5C85-4247-957A-0B7A6BF7F8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1690129-5C85-4247-957A-0B7A6BF7F8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1690129-5C85-4247-957A-0B7A6BF7F8D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88AF991B-BA55-4EA7-B39E-E626537CAAFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88AF991B-BA55-4EA7-B39E-E626537CAAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88AF991B-BA55-4EA7-B39E-E626537CAAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88AF991B-BA55-4EA7-B39E-E626537CAAFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
