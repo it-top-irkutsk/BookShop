@@ -35,7 +35,7 @@ namespace BookShop.Model
 
         public override bool Equals(object obj)
         {
-            return ReferenceEquals(this, obj) || obj is Book other && Equals(other);
+            return ReferenceEquals(this, obj) || (obj is Book other && Equals(other));
         }
 
         public override int GetHashCode()
