@@ -9,7 +9,7 @@ namespace BookShop.Lib
 {
     public partial class BookShopDb : DbContext
     {
-        public BookShopDb() { }
+        public BookShopDb() : base() { }
 
         public BookShopDb(DbContextOptions<BookShopDb> options)
             : base(options) { }
